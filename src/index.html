@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My gallery</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="/src/img/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600&family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="profile">
+            <img src="img/profilePhoto.png" class="profile-photo" alt="">
+            <div class="profile-info">
+                <h1>Eduardo Salinas</h1>
+                <p>Monterrey, México</p>
+            </div>
+            
+        </header>
+        <section class="social-stats">
+            <div class="social-stat">
+                <h2>100</h2>
+                <p>Posts</p>
+            </div>
+            <div class="social-stat">
+                <h2>2,442</h2>
+                <p>Followers</p>
+            </div>
+            <div class="social-stat">
+                <h2>1,403</h2>
+                <p>Following</p>
+            </div>
+        </section>
+        <main class="gallery">
+            <div class="gallery-item">
+                <img src="img/photo1.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo2.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo3.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo_4.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo5.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo6.png" alt="">
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Make the gallery items touchable and when i press in each one, it will show me the image big centered and dark background
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const gallery = document.querySelector('.gallery');
+        const body = document.querySelector('body');
+        
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Create the div that will contain the image
+                const bigImageContainer = document.createElement('div');
+                bigImageContainer.classList.add('big-image-container');
+                // Create the image
+                const bigImage = document.createElement('img');
+                bigImage.classList.add('big-image');
+                bigImage.src = item.children[0].src;
+                // Append the image to the container
+                body.style.overflow = 'hidden';
+                bigImageContainer.appendChild(bigImage);
+                // Append the container to the body
+                body.appendChild(bigImageContainer);
+                // Add the class to the body to make it dark
+                body.classList.add('dark');
+                // Add the event listener to the body to remove the image when i click outside of it
+                bigImageContainer.addEventListener('click', () => {
+                    if (event.target.classList.contains('big-image-container')) {
+                        body.removeChild(bigImageContainer);
+                        body.classList.remove('dark');
+                        body.style.overflow = 'auto';
+                    }
+                })
+            })
+        })
+
+
+        
+    </script>
+</body>
+</html>
