@@ -129,6 +129,17 @@ main.gallery {
     grid-area: six;
 }
 
+footer p {
+    text-align: center;
+    font-family: 'PT Sans',sans-serif;
+}
+
+footer a {
+    background: linear-gradient(45deg, #405DE6, #E4405F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .big-image-container {
     position: fixed;
