@@ -177,16 +177,17 @@ main.gallery {
 
     .social-stat {
         width: 100px;
-        height: 60px;
+        height: 50px;
         margin: 20px 10px;
+        border-radius: 10px;
     }
 
     .social-stat h2 {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .social-stat p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     main.gallery {
